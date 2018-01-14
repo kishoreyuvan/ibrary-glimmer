@@ -1,0 +1,84 @@
+<div class="container-fluid " style="font-family:Comic Sans MS;">
+  <div >
+  <h1 class="accet" style="margin-left:5%">Accet Books</h1>
+</div><br><br>
+<div class="well well-lg" >
+<div class="row">
+  <div class="col-xs-6 col-md-4">
+  <div class="thumbnail" onclick={{action book}} >
+      <img src="/book.png" style="height:100px;width:auto;" alt="...">
+      <div class="caption text-center">
+        <h3>Reserved Books</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <div class="thumbnail" onclick={{action return}}>
+      <img src="/return.png" style="height:100px;width:auto;" alt="...">
+      <div class="caption text-center">
+        <h3>Returned Books</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-md-4">
+  <div class="thumbnail" onclick={{action list}}>
+      <img src="/list.png"  style="height:100px;width:auto;" alt="...">
+      <div class="caption text-center">
+        <h3>Available Books</h3>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{{#if booked}}
+<div class="table-responsive jumbotron">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Book Name</th>
+        <th>Year</th>
+        <th>Author</th>
+        <th>Return</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each assignedbooks key="@index" as |book index|}}
+      <tr>
+      <tabl-book @book={{book}} @index={{index}} @enable=true />
+      <td><button class="btn btn-xs btn-danger " onclick={{action returnbook book}}>Return</button></td>
+    </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+  {{/if}}
+  {{#if returned}}
+  <div class="table-responsive jumbotron">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Book Name</th>
+          <th>Year</th>
+          <th>Author</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each returnedbooks key="@index" as |book index|}}
+        <tr>
+        <tabl-book @book={{book}} @index={{index}}  />
+      </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+    {{/if}}
+{{#if listbooks}}
+  <div class="row">
+  {{#each books key="@index" as |book|}}
+  <each-book @book={{book}} @assignbook={{action assignbook}} />
+  {{/each}}
+</div>
+{{/if}}
+</div>

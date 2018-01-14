@@ -1,0 +1,40 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" >Accet</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" onclick={{action showhomes}} >Home</a></li>
+        <li><a href="#" onclick={{action showbooks}} >Access Books</a></li>
+        <li><a href="#" onclick={{action showcontacts}}>Contacts</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{{#if showhome}}
+<div class="inner cover" style="text-align: center;color:#fff">
+  <img src="/no1.png" style="width:10%;height:auto;" />
+  <h1 class="cover-heading"><span class="startleft">M</span><span class="startleft">a</span><span class="startleft">k</span><span class="startleft">e</span>
+     <span class="startleft">Y</span><span class="startleft">o</span><span class="startleft">u</span><span class="startleft">r</span>
+     <span class="startleft">F</span><span class="startleft">u</span><span class="startleft">t</span><span class="startleft">u</span><span class="startleft">r</span><span class="startleft">e</span>
+     <span class="startleft">B</span><span class="startleft">r</span><span class="startleft">i</span><span class="startleft">g</span><span class="startleft">h</span><span class="startleft">t</span>
+  </h1>
+  <a href="#" class="btn btn-primary" onclick={{action showbooks}}>Enter</a>
+</div>
+{{/if}}
+{{#if showbook}}
+<books-component />
+{{/if}}
+{{#if showcontact}}
+<contact-component />
+{{/if}}

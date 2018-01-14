@@ -1,0 +1,33 @@
+<div class="jumbotron" style="font-family:Comic Sans MS">
+  <div>
+  <h1 class="display-4 text-center" style="font-family:Courier New">Accet Contacts</h1>
+ </div>
+<br>
+<div class="container table-responsive">
+<table class="table table-bordered table-hover ">
+  <thead>
+    <tr>
+      <th>S.no</th>
+      <th>Name</th>
+      <th>Mobile</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+{{#each contacts key="@index" as |contact index|}}
+    <disp-component @contact={{contact}} @index={{index}} @edit={{action enableedit}} @delete={{action deletecontact}} />
+{{/each}}
+  </tbody>
+</table>
+</div>
+ <div class="row">
+  <button class="btn btn-primary col-md-6 col-md-offset-3" style="font-family:Comic Sans MS" onclick={{action addnewcontact}}>Add New Contact </button></div>
+ <br><br>
+{{#if createnewcontact}}
+<create-edit-component @name={{name}} @mobileno={{mobileno}} @email={{email}} @update={{action update}} @save={{action save}} @disabled={{check}} @saveoredit="Save" />
+{{/if}}
+{{#if caneditcontact}}
+<create-edit-component @name={{name}} @mobileno={{mobileno}} @email={{email}} @save={{action edit}} @update={{action update}} @disabled={{check}} @saveoredit="Edit" />
+{{/if}}
+</div>

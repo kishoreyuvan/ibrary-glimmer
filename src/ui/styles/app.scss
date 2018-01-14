@@ -1,0 +1,96 @@
+h1 {
+  color: #444;
+}
+.thumbnail:hover{
+  background-color: rgba(255,211,211,0.63);
+
+}
+input{
+  border: none;
+   border-bottom: 2px solid red;
+}
+
+.caption h3:hover{
+  -webkit-animation: mymove 1s infinite; /* Chrome, Safari, Opera */
+  animation: mymove 1s infinite;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+  /* Chrome, Safari, Opera */
+  @-webkit-keyframes mymove {
+      from {font-size: 24px;}
+      to {font-size:30px;}
+  }
+
+  /* Standard syntax */
+  @keyframes mymove {
+      from {font-size: 24px;}
+      to {font-size: 30px;}
+  }
+body{
+  background: url("library.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.inner {
+  padding: 10%;
+}
+.accet{
+  -webkit-animation: accet 2s infinite; /* Chrome, Safari, Opera */
+  animation: accet 2s infinite;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  position:relative;
+  text-align: right;
+}
+@-webkit-keyframes accet {
+    from {right:0%;color:#fff;-webkit-filter: blur(2px);transform: rotateX(0deg);}
+    to {right:80%;color:yellow;-webkit-filter: blur(0px);transform: rotateX(1440deg);}
+}
+
+/* Standard syntax */
+@keyframes accet {
+    from {right:0%;color:#fff;-webkit-filter: blur(2px);transform: rotateX(0deg);}
+    to {right:80%;color:yellow;-webkit-filter: blur(0px);transform: rotateX(1440deg);}
+}
+.glyphicon:hover{
+  -webkit-animation: button 2s infinite; /* Chrome, Safari, Opera */
+  animation: button 2s infinite;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes button {
+    from {transform: rotateX(0deg);}
+    to {transform: rotateX(360deg);}
+}
+
+/* Standard syntax */
+@keyframes button {
+    from {transform: rotateX(0deg);}
+    to {transform: rotateX(360deg);}
+}
+.startleft{
+  -webkit-animation: anime 2s infinite; /* Chrome, Safari, Opera */
+  animation: anime 2s infinite;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes anime {
+    from {padding-left:1%;}
+    to {padding-left:0%;}
+}
+
+/* Standard syntax */
+@keyframes anime {
+    from {padding-left:1%;}
+    to {padding-left:0%;}
+}
